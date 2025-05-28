@@ -2,7 +2,7 @@
 
 <?php
 function fetchArticlesFromRSS() {
-    $rssUrl = "https://www.mashable.com/feed";
+    $rssUrl = "https://mashable.com/feeds/rss/all";
     $rss = simplexml_load_file($rssUrl);
 
     $articles = [];
