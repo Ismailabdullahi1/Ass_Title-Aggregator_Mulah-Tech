@@ -10,13 +10,10 @@ function fetchArticlesFromRSS() {
     foreach ($rss->channel->item as $item) {
         $title = (string) $item->title;
         $link = (string) $item->link;
-        $pubDate = strtotime($item->pubDate); // Convert to timestamp
+        $pubDate = strtotime($item->pubDate);
 
-        // Debugging - Output the pubDate to see what's being fetched
-        echo "Pub Date: " . date("Y-m-d H:i:s", $pubDate) . "<br>";  // Add this to check the dates being processed
-
-        // Filter articles from Jan 1, 2022 onwards
-        if ($pubDate >= strtotime("2022-01-01")) {
+        //  from Jan 1, 2022 onwards
+        if ($pubDate >= strtotime("2022-01-01 00:00:00")) {
             $articles[] = [
                 'title' => $title,
                 'url' => $link,
@@ -25,13 +22,14 @@ function fetchArticlesFromRSS() {
         }
     }
 
-    // Sort anti-chronologically (latest first)
+   
     usort($articles, fn($a, $b) => $b['date'] <=> $a['date']);
     return $articles;
 }
 
 $articles = fetchArticlesFromRSS();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
