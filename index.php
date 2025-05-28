@@ -8,7 +8,10 @@ function fetchArticlesFromRSS() {
     foreach ($rss->channel->item as $item) {
         $title = (string) $item->title;
         $link = (string) $item->link;
-        $pubDate = strtotime($item->pubDate);
+        $pubDate = strtotime($item->pubDate); // Convert to timestamp
+
+        // Debugging - Output the pubDate to see what's being fetched
+        echo "Pub Date: " . date("Y-m-d H:i:s", $pubDate) . "<br>";  // Add this to check the dates being processed
 
         // Filter articles from Jan 1, 2022 onwards
         if ($pubDate >= strtotime("2022-01-01")) {
@@ -32,7 +35,7 @@ $articles = fetchArticlesFromRSS();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wired Headlines (From Jan 1, 2022)</title>
+    <title>ISMAIL-2nd Ass -Mulah Tech</title>
     <style>
         * {
             margin: 0;
@@ -100,7 +103,6 @@ $articles = fetchArticlesFromRSS();
             margin-top: 0.5rem;
         }
 
-        /* Header styling */
         header {
             text-align: center;
             padding: 2rem;
@@ -134,7 +136,7 @@ $articles = fetchArticlesFromRSS();
 <body>
     <header>
         <h1>Wired Headlines (From Jan 1, 2022)</h1>
-        <p>Your source for the latest articles from Wired</p>
+        <p> the latest articles from Wired</p>
     </header>
 
     <ul>
