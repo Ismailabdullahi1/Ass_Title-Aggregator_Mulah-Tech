@@ -1,5 +1,11 @@
 
+<!---
 
+//Developer: ISMAIL ABDULLAHI YUSUF 
+//Date: 2025-05-23
+ lets starts and enjoy the task with cup of coffee  --->
+
+ 
 <?php
 function fetchArticlesFromRSS() {
     $rssUrl = "https://mashable.com/feeds/rss/all";
