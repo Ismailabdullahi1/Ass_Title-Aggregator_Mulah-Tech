@@ -1,3 +1,5 @@
+
+
 <?php
 function fetchArticlesFromRSS() {
     $rssUrl = "https://www.wired.com/feed/rss";
