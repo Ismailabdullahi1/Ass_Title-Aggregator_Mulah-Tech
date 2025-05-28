@@ -12,7 +12,7 @@ function fetchArticlesFromRSS() {
         $link = (string) $item->link;
         $pubDate = strtotime($item->pubDate);
 
-        // Only fetch articles from Jan 1, 2022 onwards
+        //  articles from Jan 1, 2022 onwards
         if ($pubDate >= strtotime("2022-01-01 00:00:00")) {
             $articles[] = [
                 'title' => $title,
@@ -22,13 +22,13 @@ function fetchArticlesFromRSS() {
         }
     }
 
-    // Sort articles by date in descending order (most recent first)
+   
     usort($articles, fn($a, $b) => $b['date'] <=> $a['date']);
 
     return $articles;
 }
 
-// Fetch the filtered articles
+
 $articles = fetchArticlesFromRSS();
 
 ?>
