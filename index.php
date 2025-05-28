@@ -138,8 +138,8 @@ $articles = fetchArticlesFromRSS();
 </head>
 <body>
     <header>
-        <h1>Wired Headlines (From Jan 1, 2022)</h1>
-        <p> the latest articles from Wired</p>
+        <h1>Mashable Headlines (From Jan 1, 2022)</h1>
+        <p> the latest articles from Mashable</p>
     </header>
 
     <ul>
